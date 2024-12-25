@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: 'prak8', url: 'https://github.com/NadiaArinaNS/prak_ppmpl8.git'
+                git branch: 'prak_ppmpl8', url: 'https://github.com/NadiaArinaNS/prak_ppmpl8.git'
             }
         }
         stage('Install Dependencies') {
