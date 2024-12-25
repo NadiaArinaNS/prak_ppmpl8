@@ -4,25 +4,25 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('checkout') {
+        stage('Checkout') {
             steps {
                 git branch: 'prak_ppmpl8', url: 'https://github.com/NadiaArinaNS/prak_ppmpl8.git'
             }
         }
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Run Unit Tests') {
             steps {
-                bat 'npm test'
+                sh 'npm test'
             }
         }
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                // Tambahkan perintah build jika diperlukan
+                sh 'npm run build'  // Menambahkan perintah build untuk aplikasi
             }
         }
         stage('Deploy') {
